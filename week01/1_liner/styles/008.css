@@ -1,0 +1,39 @@
+.parent {
+    /* height: auto; */
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 1rem;
+    background-color: #f0f0f0;
+}
+
+.visual-pink {
+    background-color: lightskyblue;
+    height: 100px;
+    width: 100%;
+  }
+
+.visual-blue {
+    background-color: lightblue;
+    height: 100px;
+    width: 100%;
+  }
+
+.visual-green {
+    background-color: lightgreen;
+    height: 100px;
+    width: 100%;
+  }
+
+.card-yellow {
+    background-color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    justify-content: space-between;
+    min-height: 200px;
+  }
+
+h3 {
+    margin: 0
+  }

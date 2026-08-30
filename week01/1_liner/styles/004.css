@@ -1,0 +1,15 @@
+.parent {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+  }
+.blue-section {
+    background-color: lightblue;
+}
+
+.coral-section {
+    background-color: lightcoral;
+}
+
+.purple-section {
+    background-color: lightpink;
+}

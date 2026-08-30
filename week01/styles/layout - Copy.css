@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* ===== BODY ===== */
+body {
+    /* Prevent stretching on large screen */
+    max-width: 1200px; 
+    /* Centers the content */
+    margin: 0 auto;
+    /* Adds breathing room on edges */
+    padding: 0 20px
+}
+
+/* ===== HEADER ===== */
+h1 {
+    font-size: 1.8rem;
+    background-color: black;
+    color: white;
+    padding: 20px;
+    /* text-align: center; */
+    
+}
+
+/* ===== NAVIGATION ===== */
+.nav-bar {
+    background-color: black;
+    color: white;
+    padding: 10px;
+}
+
+.nav-bar-container {
+    display: flex;
+    justify-content: space-around;
+    /* Allows wrapping on small screen */
+    flex-wrap: wrap;
+    gap: 10px
+}
+
+li {
+    list-style: none;
+}
+
+.btn {
+    text-decoration: none;
+    color: white;
+    /* Added padding for better click area */
+    padding: 8px 15px;
+    display: inline-block;
+}
+
+.btn:hover {
+    background-color: #333; /* ✅ Hover effect */
+    border-radius: 4px;
+}
+
+/* ===== HERO SECTION (Flexbox) ===== */
+.hero-section {
+    display: flex;
+    /* Adds space between sections */
+    gap: 20px;
+    margin: 20px, 0;
+    min-height: 300px;
+}
+
+.main-section {
+    background-color: lightgrey;
+    /* Takes 2/3 of space */
+    flex: 2;
+    padding: 20px;
+    font-size: 1.2rem;
+}
+
+.aside-section {
+    background-color: white;
+    flex: 1;
+    padding: 20px;
+    font-size: 1.2rem;
+    /* Visual separation */
+    border: 1px solid #ddd;
+}
+
+/* ===== FOOTER ===== */
+.footer-section {
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 40px 20px;
+    margin-top: 20px;
+}
+
+
+/* ✅ Mobile: 480px and below */
+@media screen and (max-width: 480px) {
+    body {
+        padding: 0 10px;
+    }
+
+    h1 {
+        font-size: 1.2rem;
+        padding: 12px;
+    }
+
+    .btn {
+        font-size: 0.9rem;
+        padding: 6px 12px;
+    }
+
+    .main-section,
+    .aside-section {
+        padding: 15px;
+        font-size: 1rem;
+        min-height: 120px;
+    }
+
+    .footer-section {
+        font-size: 1rem;
+        padding: 30px 15px;
+    }
+}

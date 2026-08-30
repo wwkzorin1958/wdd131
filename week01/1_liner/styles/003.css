@@ -1,0 +1,18 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.parent {
+    display: grid;
+    grid-template-columns: minmax(150px, 25%) 1fr;
+    height: 200px;
+}
+.section_yellow {
+    background-color: yellow;
+    width: 100%;
+}
+.section_purple {
+    background-color: lightpink;
+    width: 100%
+}

@@ -1,0 +1,30 @@
+.parent {
+    display: grid;
+    grid-template: auto 1fr auto / auto 1fr auto;
+  }
+  
+header {
+    padding: 2rem;
+    grid-column: 1 / 4;
+    background-color: lightgray;
+  }
+
+  .left-side {
+    grid-column: 1 / 2;
+    background-color: lightblue;
+  }
+
+main {
+    grid-column: 2 / 3;
+    background-color: coral;
+  }
+
+.right-side {
+    grid-column: 3 / 4;
+    background-color: lightyellow;
+  }
+
+footer {
+    grid-column: 1 / 4;
+    background-color: lightgreen;
+  }
