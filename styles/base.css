@@ -93,11 +93,11 @@ h1 {
 }
 
 .card:first-child {
-    flex: 0 0 65%;  /* ✅ Takes 65% of space */
+    flex: 0 0 65%;  
 }
 
 .card:last-child {
-    flex: 0 0 35%;  /* ✅ Takes 35% of space */
+    flex: 0 0 35%;  
 }
 
 
@@ -150,7 +150,7 @@ h1 {
 .hk-heading h3 {
     margin: 0;
     color: rgb(8, 8, 141);
-    border-bottom: 2px solid rgba(8, 8, 141, 0.5);  /* ✅ 50% opacity */
+    border-bottom: 2px solid rgba(8, 8, 141, 0.5);  
     padding-bottom: 8px;
     font-size: 1.3rem;
 }
@@ -167,7 +167,7 @@ h1 {
     line-height: 1.6;
 }
 
-/* Row 1-3, Col 2: Photo spans all rows but only takes 1/3 height */
+/* Row 1-3, Col 2 */
 .photo-column {
     grid-row: 1 / 4;
     grid-column: 2;
