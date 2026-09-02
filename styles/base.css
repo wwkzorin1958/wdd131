@@ -12,14 +12,21 @@ body {
     background-color: #f0f0f0;
 }
 
-#course-title {
-    display: block;
+/* ===== HEADER ===== */
+header {
     background-color: rgb(8, 8, 141);
     color: white;
     text-align: center;
     padding: 5px;
     max-width: 1000px;
     margin: 0 auto;
+}
+
+#course-title {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 700;
+    padding: 10px;
 }
 
 nav {
@@ -46,6 +53,7 @@ nav a:hover {
     border: 1px solid #fff;
 }
 
+/* ===== MAIN ===== */
 main {
     max-width: 1000px;
     margin: 0 auto;
@@ -58,14 +66,13 @@ h1 {
     font-size: 2rem;
 }
 
-/* ===== CARD CONTAINER ===== */
+/* ===== CARDS ===== */
 .card-container {
     display: flex;
     gap: 20px;
     align-items: stretch;
 }
 
-/* ===== CARD HEADINGS ===== */
 .card-heading {
     background-color: rgb(8, 8, 141);
     color: white;
@@ -81,7 +88,6 @@ h1 {
     justify-content: center;
 }
 
-/* ===== CARD STYLES ===== */
 .card {
     flex: 1;
     border: 1px solid #ddd;
@@ -94,13 +100,12 @@ h1 {
 }
 
 .card:first-child {
-    flex: 0 0 65%;  
+    flex: 0 0 65%;
 }
 
 .card:last-child {
-    flex: 0 0 35%;  
+    flex: 0 0 35%;
 }
-
 
 /* ===== FLAG CONTAINER ===== */
 .flag-container {
@@ -127,7 +132,7 @@ h1 {
     line-height: 1.2;
 }
 
-/* ===== RIGHT CARD: Center the list ===== */
+/* ===== RIGHT CARD ===== */
 .card:last-child ul {
     flex: 1;
     display: flex;
@@ -147,16 +152,6 @@ h1 {
     flex: 1;
 }
 
-/* Row 1, Col 1 */
-.hk-heading h3 {
-    margin: 0;
-    color: rgb(8, 8, 141);
-    border-bottom: 2px solid rgba(8, 8, 141, 0.5);  
-    padding-bottom: 8px;
-    font-size: 1.3rem;
-}
-
-
 .first-paragraph {
     grid-row: 1;
     grid-column: 1;
@@ -168,7 +163,6 @@ h1 {
     line-height: 1.6;
 }
 
-/* Row 1-3, Col 2 */
 .photo-column {
     grid-row: 1 / 4;
     grid-column: 2;
@@ -185,7 +179,6 @@ h1 {
     border-radius: 8px;
 }
 
-/* Row 2, Col 1 */
 .hk-heading {
     grid-row: 2;
     grid-column: 1;
@@ -195,25 +188,17 @@ h1 {
 .hk-heading h3 {
     margin: 0;
     color: rgb(8, 8, 141);
-    border-bottom: 2px solid rgb(8, 8, 141);
+    border-bottom: 2px solid rgba(8, 8, 141, 0.5);  /* ✅ 50% opacity */
     padding-bottom: 8px;
     font-size: 1.3rem;
 }
 
-/* Row 3, Col 1 */
 .bottom-content {
     grid-row: 3;
     grid-column: 1;
     display: flex;
     gap: 20px;
     align-items: flex-start;
-}
-
-.bottom-content img {
-    flex: 0 0 25%;
-    max-width: 120px;
-    height: auto;
-    border-radius: 8px;
 }
 
 .bottom-content p {
@@ -250,46 +235,46 @@ h1 {
         flex-direction: column;
         align-items: stretch;
     }
-    
+
     .card:last-child ul {
         justify-content: flex-start;
     }
-    
+
     .about-grid {
         grid-template-columns: 1fr;
         grid-template-rows: auto auto auto auto;
         min-height: auto;
     }
-    
+
     .first-paragraph {
         grid-row: 1;
         grid-column: 1;
     }
-    
+
     .photo-column {
         grid-row: 2;
         grid-column: 1;
         min-height: 150px;
     }
-    
+
     .photo-column img {
         max-height: 200px;
         width: 100%;
         height: auto;
     }
-    
+
     .hk-heading {
         grid-row: 3;
         grid-column: 1;
     }
-    
+
     .bottom-content {
         grid-row: 4;
         grid-column: 1;
         flex-direction: column;
         align-items: center;
     }
-    
+
     .bottom-content img {
         flex: 0 0 auto;
         width: 100%;
@@ -297,6 +282,7 @@ h1 {
     }
 }
 
+/* ===== FOOTER ===== */
 footer {
     background-color: rgb(8, 8, 141);
     color: white;
