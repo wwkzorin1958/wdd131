@@ -13,6 +13,7 @@ body {
 }
 
 #course-title {
+    display: block;
     background-color: rgb(8, 8, 141);
     color: white;
     text-align: center;
