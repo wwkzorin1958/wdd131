@@ -188,7 +188,7 @@ h1 {
 .hk-heading h3 {
     margin: 0;
     color: rgb(8, 8, 141);
-    border-bottom: 2px solid rgba(8, 8, 141, 0.5);  /* ✅ 50% opacity */
+    border-bottom: 2px solid rgba(8, 8, 141, 0.5);
     padding-bottom: 8px;
     font-size: 1.3rem;
 }
