@@ -12,7 +12,6 @@ body {
     background-color: #f0f0f0;
 }
 
-/* ===== HEADER ===== */
 header {
     background-color: rgb(8, 8, 141);
     color: white;
@@ -53,7 +52,6 @@ nav a:hover {
     border: 1px solid #fff;
 }
 
-/* ===== MAIN ===== */
 main {
     max-width: 1000px;
     margin: 0 auto;
@@ -66,7 +64,6 @@ h1 {
     font-size: 2rem;
 }
 
-/* ===== CARDS ===== */
 .card-container {
     display: flex;
     gap: 20px;
@@ -107,7 +104,6 @@ h1 {
     flex: 0 0 35%;
 }
 
-/* ===== FLAG CONTAINER ===== */
 .flag-container {
     flex: 0 0 25%;
     max-width: 120px;
@@ -132,7 +128,6 @@ h1 {
     line-height: 1.2;
 }
 
-/* ===== RIGHT CARD ===== */
 .card:last-child ul {
     flex: 1;
     display: flex;
@@ -142,7 +137,6 @@ h1 {
     margin: 0;
 }
 
-/* ===== 3-ROW, 2-COLUMN GRID ===== */
 .about-grid {
     display: grid;
     grid-template-columns: 3fr 1fr;
@@ -208,7 +202,6 @@ h1 {
     line-height: 1.6;
 }
 
-/* ===== WEB RESOURCES LIST ===== */
 .card ul {
     list-style: disc;
     padding: 0;
@@ -229,7 +222,6 @@ h1 {
     text-decoration: underline;
 }
 
-/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
     .card-container {
         flex-direction: column;
@@ -282,7 +274,6 @@ h1 {
     }
 }
 
-/* ===== FOOTER ===== */
 footer {
     background-color: rgb(8, 8, 141);
     color: white;
