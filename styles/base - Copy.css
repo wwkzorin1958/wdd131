@@ -68,6 +68,7 @@ main {
 
 /* ===== LEFT CARD ===== */
 .left-card {
+    /* Takes 2fr automatically */
     display: flex;
     flex-direction: column;
 }
@@ -76,6 +77,11 @@ main {
     font-size: 2.5rem;
     margin-bottom: 1rem;
     text-align: center;
+}
+
+/* ===== RIGHT CARD ===== */
+.right-card {
+    /* Takes 1fr automatically */
 }
 
 /* ===== CARD STYLES ===== */
