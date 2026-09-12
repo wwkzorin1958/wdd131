@@ -1,0 +1,152 @@
+/* ============================================================
+   temples.css  —  Mobile-first base styles
+   Asian-inspired palette
+   ============================================================ */
+
+:root {
+    --color-primary:    #8B1E1E;
+    --color-accent:     #D4A017;
+    --color-jade:       #2E7D6F;
+    --color-bg:         #F7F1E3;
+    --color-surface:    #FFFFFF;
+    --color-text:       #2B2B2B;
+    --color-text-light: #FFFFFF;
+    --image-height:     240px;   /* same for every image — change once here */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+}
+
+/* ---------- Header ---------- */
+header {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    border-bottom: 3px solid var(--color-accent);
+}
+
+header h1 {
+    font-size: 1.25rem;
+    color: var(--color-text-light);
+    margin: 0;
+    text-align: left;
+    letter-spacing: 0.5px;
+}
+
+/* ---------- Hamburger ---------- */
+#menu {
+    display: block;
+    font-size: 1.75rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--color-text-light);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+}
+
+#menu::before { content: "☰"; }
+#menu.show::before { content: "X"; }
+
+/* ---------- Navigation (mobile) ---------- */
+header nav { width: 100%; }
+
+header nav ul {
+    list-style: none;
+    display: none;
+    flex-direction: column;
+    width: 100%;
+}
+
+header nav ul.show { display: flex; }
+
+header nav a {
+    display: block;
+    color: var(--color-text-light);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.75rem 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header nav a:hover,
+header nav a:focus {
+    background-color: var(--color-accent);
+    color: var(--color-primary);
+}
+
+/* ---------- Gallery: 1 column on mobile ---------- */
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    max-width: 1100px;
+    margin: 1.5rem auto;
+    padding: 0 1rem;
+    align-items: start;   /* don't stretch cards to fill row height */
+}
+
+main > h1 { display: none; }
+
+/* ---------- Figures ---------- */
+figure {
+    background-color: var(--color-surface);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(139, 30, 30, 0.15);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid rgba(212, 160, 23, 0.35);
+    display: flex;              /* lets the figcaption sit directly below */
+    flex-direction: column;
+}
+
+figure:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 14px rgba(139, 30, 30, 0.3);
+}
+
+/* ★ Same size for every image, whole picture visible */
+figure img {
+    width: 100%;
+    height: var(--image-height);      /* fixed box → captions line up */
+    object-fit: contain;              /* whole image, no cropping */
+    background-color: var(--color-bg);/* fills the letterbox space */
+    display: block;
+}
+
+figcaption {
+    padding: 0.75rem;
+    text-align: center;
+    font-weight: 700;
+    color: var(--color-jade);
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    margin-top: auto;                 /* pushes caption to a consistent spot */
+}
+
+/* ---------- Footer ---------- */
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    border-top: 3px solid var(--color-accent);
+}

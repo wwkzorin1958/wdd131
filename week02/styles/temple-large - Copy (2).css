@@ -1,0 +1,42 @@
+@media only screen and (min-width: 40em) {
+
+    header {
+        padding: 1rem 2rem;
+        flex-wrap: nowrap;
+    }
+
+    header h1 { font-size: 1.5rem; }
+
+    #menu { display: none; }
+
+    header nav { width: auto; }
+
+    header nav ul {
+        display: flex;
+        flex-direction: row;
+        gap: 1.5rem;
+        width: auto;
+    }
+
+    header nav a {
+        display: inline-block;
+        padding: 0.25rem 0;
+        border-top: none;
+        border-bottom: 2px solid transparent;
+        transition: color 0.3s, border-bottom 0.3s, background-color 0.3s;
+    }
+
+    header nav a:hover,
+    header nav a:focus {
+        background-color: transparent;
+        color: var(--color-accent);              /* soft ochre */
+        border-bottom: 2px solid var(--color-accent);
+    }
+
+    main {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        margin: 2rem auto;
+        padding: 0 2rem;
+    }
+}
