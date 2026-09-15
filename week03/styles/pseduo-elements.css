@@ -1,0 +1,136 @@
+* {
+	margin: 0;
+	padding: 0;  /* removes browser default spacing 
+                (headings, paragraphs, lists all have defaults). */
+	
+    /* makes width/height include padding and border, 
+    so an element's declared width is its actual rendered 
+    width. This prevents unexpected overflow. */
+    box-sizing: border-box;
+}
+
+body {
+	height: 100vh; /* the body fills the full viewport height*/
+	display: flex;  /* flex container */
+	align-items: center; /* vertically centers the <main> hild*/
+	justify-content: center; /* horizontally centers it*/
+}
+
+h1,
+h2 {
+	font-family: Roboto, helvetica, sans-serif;
+	margin: 0;
+	padding: 0.5rem;
+	font-size: larger;
+	font-weight: 700;
+}
+
+/* Each <section> becomes a card-like block. */
+section {
+	margin: 1rem 0;
+    /* a very faint border. The rgb(0 0 0 / 0.1) is modern 
+    space-separated syntax with an alpha channel — 10% opaque black.
+    Equivalent to rgba(0, 0, 0, 0.1). */
+	border: 1px solid rgb(0 0 0 / 0.1);
+	padding: 0.5rem;
+	width: 760px;
+	background-color: #eee;
+}
+
+p,
+input,
+label {
+	margin: 0.25rem;
+	padding: 0.5rem;
+}
+
+/* The .sel class limits it to that one paragraph. */
+/* ::selection is a pseudo-element that targets the portion of text the user has highlighted with the mouse. */
+.sel::selection {
+	background-color: #000;
+	color: yellow;
+}
+
+.firstline::first-line {
+	color: tomato;
+}
+.firstletter::first-letter {
+	color: navy;
+	font-size: 2rem;
+}
+.before::before {
+	content: "🎈 ";
+}
+.after::after {
+	content: " 🌮";
+}
+
+ol {
+	list-style: numeric;
+	margin-left: 3rem;
+}
+/* 
+1 counter-increment: paras; — each .counter element increments
+ a counter named paras by 1. So the first .counter becomes 1, 
+ the second becomes 2, etc.
+
+2 counter(paras) inside content — outputs the current value of 
+the counter.
+
+3 content: "🔸" counter(paras) ":" — prepends a diamond emoji, 
+the counter number, and a colon to each paragraph. */
+
+.counter {
+	counter-increment: paras;
+    font-family: courier;
+}
+
+.counter::before {
+	content: "🔸" counter(paras) ":";
+}
+
+.mark-complete::before {
+	content: "🗝️ ";
+}
+
+/* ::marker is a pseudo-element that targets the list item marker 
+(bullet/number) itself. */
+ol li::marker {
+	color: navy;
+	font-size: 2rem;
+    content: "✓ " — replaces the default number with a checkmark.
+/* ⚠️ Important caveat: Setting content on ::marker removes 
+the automatic numbering for those items. So the list shows 
+✓ Task 1, ✓ Task 2, ✓ Task 3 — no numbers. If you wanted both, 
+you'd need a counter-based approach instead. */
+	content: "✓ ";
+}
+
+/* 🧠 Key Takeaways
+1 Pseudo-elements create "virtual" elements — they aren't in the HTML but behave like real boxes you can style.
+
+2 content is mandatory for ::before and ::after to render.
+
+3 ::first-line and ::first-letter are render-based, not 
+source-based — they adapt to layout changes.
+
+4 CSS counters (counter-increment + counter()) let you generate
+numbering purely in CSS.
+
+5 Each pseudo-element accepts only a subset of properties — 
+layout properties like margin often don't apply to ::selection, 
+::marker, or ::first-line.
+
+6 ::marker with content overrides the default numbering — 
+a subtle gotcha in this file. */
+
+/* 🎬 Summary Table of Pseudo-elements Used
+Pseudo-element	Selector	Effect
+::selection	.sel::selection	Black bg / yellow text on highlighted text
+::first-line	.firstline::first-line	First rendered line turns tomato
+::first-letter	.firstletter::first-letter	First character navy, 2rem (drop cap)
+::before	.before::before	🎈 inserted before paragraph
+::after	.after::after	🌮 inserted after paragraph
+::before + counter	.counter::before	🔸N: prefix using CSS counter
+::before	.mark-complete::before	🗝️ before a specific list item
+::marker	ol li::marker	✓ replaces numbers, navy, 2rem */
