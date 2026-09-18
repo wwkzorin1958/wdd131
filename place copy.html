@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hong Kong Explorer · Weather & Data</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/place.css">
+  <script src="scripts/places.js" defer></script>
+</head>
+<body>
+  <div class="wireframe">
+
+    <!-- TITLE -->
+    <div class="title-section">
+      <div class="title-box">Hong Kong Explorer</div>
+    </div>
+
+    <!-- HERO + OVERLAY CARDS (large view) -->
+    <div class="hero-wrapper">
+      <div class="hero">
+        <img 
+          src="images/hong-kong-hero-large.webp"
+          srcset="
+            images/hong-kong-hero-small.webp 400w,
+            images/hong-kong-hero-medium.webp 800w,
+            images/hong-kong-hero-large.webp 1200w
+          "
+          sizes="(max-width: 480px) 100vw, (max-width: 900px) 80vw, 1200px"
+          alt="Hong Kong skyline at dusk with Victoria Harbour and skyscrapers"
+          class="hero-img"
+          width="1200" 
+          height="675"
+        >
+      </div>
+
+      <!-- Cards container: on mobile they stack below, on desktop they overlay -->
+      <div class="cards-container">
+        <!-- DATA CARD -->
+        <div class="card" id="dataCard">
+          <h2>Data</h2>
+          <div class="row">
+            <span class="label">Region:</span>
+            <span class="value">Hong Kong</span>
+          </div>
+          <div class="row">
+            <span class="label">Population:</span>
+            <span class="value">7.5 Million</span>
+          </div>
+          <div class="row">
+            <span class="label">Currency:</span>
+            <span class="value">HKD</span>
+          </div>
+          <div class="row">
+            <span class="label">Language:</span>
+            <span class="value">Cantonese, English</span>
+          </div>
+          <div class="row">
+            <span class="label">Timezone:</span>
+            <span class="value">HKT (UTC+8)</span>
+          </div>
+          <div class="row">
+            <span class="label">Driving Side:</span>
+            <span class="value">Left</span>
+          </div>
+        </div>
+
+        <!-- WEATHER CARD -->
+        <div class="card" id="weatherCard">
+          <h2>Weather</h2>
+          
+          <!-- Mobile view: SVG weather icon -->
+          <div class="weather-icon">
+            <svg class="weather-icon-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="8" cy="8" r="4" fill="#FFC107" />
+              <path d="M16 15C16 12.7909 14.2091 11 12 11C10.5 11 9.19 11.75 8.42 12.9C8.28 12.97 8.14 13 8 13C6.34 13 5 11.66 5 10C5 8.34 6.34 7 8 7C8.24 7 8.47 7.03 8.69 7.08C9.39 5.28 11.07 4 13 4C15.76 4 18 6.24 18 9C19.66 9 21 10.34 21 12C21 13.66 19.66 15 18 15H16Z" fill="#B0BEC5" />
+              <path d="M12 11C14.2091 11 16 12.7909 16 15H18C19.66 15 21 13.66 21 12C21 10.34 19.66 9 18 9C18 6.24 15.76 4 13 4C11.07 4 9.39 5.28 8.69 7.08C8.47 7.03 8.24 7 8 7C6.34 7 5 8.34 5 10C5 11.66 6.34 13 8 13C8.14 13 8.28 12.97 8.42 12.9C9.19 11.75 10.5 11 12 11Z" fill="#90A4AE" />
+            </svg>
+          </div>
+
+          <div class="row">
+            <span class="label">Temperature:</span>
+            <span class="value" id="weatherTemp">8°C</span>
+          </div>
+          <div class="row">
+            <span class="label">Wind Speed:</span>
+            <span class="value" id="weatherWind">15 km/h</span>
+          </div>
+          <div class="row">
+            <span class="label">Conditions:</span>
+            <span class="value">Partly Cloudy</span>
+          </div>
+          <div class="row">
+            <span class="label">Wind Chill:</span>
+            <span class="value" id="weatherWindChill">—</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <span class="line copyright">Standard Footer content - copyright - name - location</span>
+      <span class="line modified" id="lastModified">Last modified: —</span>
+    </div>
+  </div>
+</body>
+</html>

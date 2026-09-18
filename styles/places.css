@@ -1,0 +1,301 @@
+/* ---------- GLOBAL CSS VARIABLES ---------- */
+:root {
+  --sky-blue: #87CEEB;         
+  --sky-deep: #0B4F6C;         
+  --hk-white: #FFFFFF;
+  --hk-charcoal: #1e1e1e;
+  --hk-shadow: rgba(0, 0, 0, 0.15);
+  --hk-light-bg: #f0f8ff;      
+
+  /* Header / footer tints */
+  --header-tint: #e6f4fb;      
+  --footer-tint: #b3d9ec;      
+
+  --hk-radius: 12px;
+  --font-main: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+}
+
+/* ---------- RESET ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-main);
+  background: linear-gradient(180deg, #a8d8f0 0%, var(--sky-blue) 100%);
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  padding: var(--space-lg) var(--space-md);
+  line-height: 1.4;
+  color: var(--hk-charcoal);
+}
+
+/* ---------- WIREFRAME CONTAINER ---------- */
+.wireframe {
+  max-width: 480px;
+  width: 100%;
+  background: transparent;
+  border-radius: 16px;
+  overflow: visible;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* ---------- TITLE BAR (HEADER) ---------- */
+.title-section {
+  padding: 20px 20px 16px;
+  background: var(--header-tint);
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+.title-box {
+  border-radius: 8px;
+  padding: 14px 0;
+  text-align: center;
+  font-size: 1.9rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  background: transparent;
+  color: var(--sky-deep);
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6);
+}
+
+/* ---------- HERO IMAGE ---------- */
+.hero-wrapper {
+  position: relative;
+}
+
+.hero {
+  padding: 0;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+}
+
+.hero-img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 0;
+  display: block;
+}
+
+/* ---------- CARDS CONTAINER ---------- */
+.cards-container {
+  display: block;
+}
+
+/* ---------- CARD SECTIONS ---------- */
+.card {
+  margin: 18px 20px;
+  border-radius: var(--hk-radius);
+  padding: 16px 16px 12px;
+  background: var(--hk-white);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  position: relative;
+}
+
+/* ---------- CARD TITLE ---------- */
+.card h2 {
+  background: var(--sky-deep);
+  color: var(--hk-white);
+  padding: 12px 0;
+  margin: -12px 0 8px -12px;
+  width: calc(100% + 12px);
+  border-top-left-radius: var(--hk-radius);
+  border-top-right-radius: var(--hk-radius);
+  font-size: 1.7rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  position: relative;
+  z-index: 2;
+}
+
+/* ---------- DATA ROWS ---------- */
+.row {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 4px;
+  border-bottom: 1px dashed #b0cfe0;
+  font-size: 1rem;
+}
+
+.row:last-child {
+  border-bottom: none;
+}
+
+.label {
+  font-weight: 500;
+  color: var(--hk-charcoal);
+}
+
+.value {
+  font-weight: 400;
+  color: var(--hk-charcoal);
+  background: var(--hk-light-bg);
+  padding: 2px 10px;
+  border-radius: 12px;
+}
+
+/* ---------- WEATHER ICON (Mobile: SVG) ---------- */
+.weather-icon {
+  display: flex;
+  justify-content: center;
+  margin: 8px 0 16px;
+}
+
+.weather-icon-svg {
+  width: 54px;
+  height: 54px;
+  display: block;
+}
+
+/* ---------- LARGE VIEW WEATHER PSEUDO-ELEMENT ---------- */
+.card h2::after {
+  content: '';
+  display: none;
+}
+
+/* ---------- FOOTER ---------- */
+.footer {
+  background: var(--footer-tint);   
+  padding: 18px 20px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--hk-charcoal);
+  line-height: 1.6;
+  border-bottom-left-radius: 14px;
+  border-bottom-right-radius: 14px;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+.footer .line {
+  display: block;
+}
+
+.footer .copyright {
+  font-weight: 500;
+}
+
+.footer .modified {
+  font-size: 0.85rem;
+  color: #2c3e50;
+  margin-top: 4px;
+}
+
+/* ---------- MEDIA QUERY FOR WIDER VIEW ---------- */
+@media (min-width: 700px) {
+  .wireframe {
+    max-width: 1000px;
+  }
+
+  .hero {
+    padding: 0;
+  }
+
+  .hero-img {
+    aspect-ratio: 21 / 9;
+    border-radius: 0;
+  }
+
+  /* Cards container */
+  .cards-container {
+    position: absolute;
+    inset: 0;
+    display: block;
+    pointer-events: none;
+  }
+
+  /* ---------- DATA CARD---------- */
+  #dataCard {
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    width: 20%;
+    max-width: 200px;
+    margin: 0;
+    pointer-events: auto;
+    backdrop-filter: blur(6px);
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    font-size: 0.75rem;
+  }
+
+  /* ---------- WEATHER CARD ---------- */
+  #weatherCard {
+    position: absolute;
+    bottom: 20px;
+    right: 10px;
+    width: 20%;
+    max-width: 200px;
+    margin: 0;
+    pointer-events: auto;
+    backdrop-filter: blur(6px);
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    font-size: 0.75rem;
+  }
+
+  #dataCard .row,
+  #weatherCard .row {
+    padding: 3px 2px;
+    font-size: 0.7rem;
+  }
+
+  #dataCard h2,
+  #weatherCard h2 {
+    font-size: 1rem;
+    padding: 7px 0;
+    margin: -7px 0 5px -7px;
+    width: calc(100% + 7px);
+  }
+
+  .card h2::after {
+    content: ' ⛅';
+    display: inline;
+    font-size: 0.9rem;
+    margin-left: 3px;
+    vertical-align: middle;
+  }
+
+  .weather-icon {
+    display: none;
+  }
+}
+
+/* ---------- SMALL SCREEN FINE-TUNING ---------- */
+@media (max-width: 450px) {
+  .wireframe {
+    border-radius: 12px;
+  }
+  .title-box {
+    font-size: 1.6rem;
+    padding: 10px 0;
+  }
+  .card h2 {
+    font-size: 1.4rem;
+    padding: 10px 0;
+    margin: -10px 0 8px -10px;
+    width: calc(100% + 10px);
+  }
+  .row {
+    font-size: 0.9rem;
+  }
+}
