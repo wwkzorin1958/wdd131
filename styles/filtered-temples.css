@@ -1,16 +1,28 @@
 :root {
-    --color-primary:    #A65A4A;
-    --color-primary-dark: #8C4A3C;
-    --color-accent:     #C9A66B;
-    --color-jade:       #6B9080;
-    --color-bg:         #F5EFE6;
-    --color-surface:    #FFFFFF;
-    --color-text:       #3A3A3A;
-    --color-text-light: #FFFFFF;
+    /* ---------- COLOR PALETTE (all hex, consistent format) ---------- */
+    --color-primary:        #A65A4A;      /* terracotta */
+    --color-primary-dark:   #8C4A3C;      /* darker terracotta */
+    --color-accent:         #C9A66B;      /* soft ochre */
+    --color-jade:           #6B9080;      /* muted jade green */
+    --color-bg:             #F5EFE6;      /* warm cream */
+    --color-surface:        #FFFFFF;      /* white cards */
+    --color-text:           #3A3A3A;      /* charcoal */
+    --color-text-light:     #FFFFFF;      /* white text */
 
-    --image-height:     240px;
+    /* ---------- ALPHA VARIANTS (hex + alpha, same format) ---------- */
+    --color-primary-a12:    #A65A4A1F;    /* primary @ 12% opacity */
+    --color-primary-a22:    #A65A4A38;    /* primary @ 22% opacity */
+    --color-accent-a35:     #C9A66B59;    /* accent  @ 35% opacity */
+    --color-white-a18:      #FFFFFF2E;    /* white   @ 18% opacity */
+    --color-card-bg-a92:    #FFFFFFEB;    /* white   @ 92% opacity */
+
+    /* ---------- LAYOUT ---------- */
+    --image-height:         240px;
+    --radius-sm:            8px;
+    --radius-md:            12px;
 }
 
+/* ---------- RESET ---------- */
 * {
     margin: 0;
     padding: 0;
@@ -23,7 +35,7 @@ body {
     color: var(--color-text);
 }
 
-/* -- Header -- */
+/* ---------- HEADER ---------- */
 header {
     background-color: var(--color-primary);
     color: var(--color-text-light);
@@ -45,7 +57,7 @@ header h1 {
     font-weight: 500;
 }
 
-/* -- Hamburger -- */
+/* ---------- HAMBURGER ---------- */
 #menu {
     display: block;
     font-size: 1.75rem;
@@ -61,7 +73,7 @@ header h1 {
 #menu::before { content: "☰"; }
 #menu.show::before { content: "X"; }
 
-/* -- Navigation (mobile) -- */
+/* ---------- NAVIGATION (mobile) ---------- */
 header nav { width: 100%; }
 
 header nav ul {
@@ -79,7 +91,7 @@ header nav a {
     text-decoration: none;
     font-weight: 500;
     padding: 0.75rem 1rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.18);
+    border-top: 1px solid var(--color-white-a18);
     transition: background-color 0.3s, color 0.3s;
 }
 
@@ -89,7 +101,7 @@ header nav a:focus {
     color: var(--color-primary-dark);
 }
 
-/* -- Gallery: 1 column on mobile -- */
+/* ---------- GALLERY (mobile: 1 column) ---------- */
 main {
     display: grid;
     grid-template-columns: 1fr;
@@ -100,21 +112,21 @@ main {
     align-items: start;
 }
 
-/* -- Temple Cards -- */
+/* ---------- TEMPLE CARDS ---------- */
 figure {
     background-color: var(--color-surface);
-    border-radius: 8px;
+    border-radius: var(--radius-sm);
     overflow: hidden;
-    box-shadow: 0 2px 6px rgba(166, 90, 74, 0.12);
+    box-shadow: 0 2px 6px var(--color-primary-a12);
     transition: transform 0.3s, box-shadow 0.3s;
-    border: 1px solid rgba(201, 166, 107, 0.35);
+    border: 1px solid var(--color-accent-a35);
     display: flex;
     flex-direction: column;
 }
 
 figure:hover {
     transform: translateY(-4px);
-    box-shadow: 0 6px 14px rgba(166, 90, 74, 0.22);
+    box-shadow: 0 6px 14px var(--color-primary-a22);
 }
 
 figure img {
@@ -152,7 +164,7 @@ figcaption p strong {
     font-weight: 500;
 }
 
-/* -- Footer -- */
+/* ---------- FOOTER ---------- */
 footer {
     text-align: center;
     padding: 1.5rem;
