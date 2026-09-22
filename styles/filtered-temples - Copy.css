@@ -1,18 +1,20 @@
 :root {
-    --color-primary:        #A65A4A;      
-    --color-primary-dark:   #8C4A3C;      
-    --color-accent:         #C9A66B;     
-    --color-jade:           #6B9080;    
-    --color-bg:             #F5EFE6;     
-    --color-surface:        #FFFFFF;     
-    --color-text:           #3A3A3A;    
-    --color-text-light:     #FFFFFF;    
+    /* ---------- COLOR PALETTE (all hex, consistent format) ---------- */
+    --color-primary:        #A65A4A;      /* terracotta */
+    --color-primary-dark:   #8C4A3C;      /* darker terracotta */
+    --color-accent:         #C9A66B;      /* soft ochre */
+    --color-jade:           #6B9080;      /* muted jade green */
+    --color-bg:             #F5EFE6;      /* warm cream */
+    --color-surface:        #FFFFFF;      /* white cards */
+    --color-text:           #3A3A3A;      /* charcoal */
+    --color-text-light:     #FFFFFF;      /* white text */
 
-    --color-primary-a12:    #A65A4A1F;   
-    --color-primary-a22:    #A65A4A38;    
-    --color-accent-a35:     #C9A66B59;   
-    --color-white-a18:      #FFFFFF2E;    
-    --color-card-bg-a92:    #FFFFFFEB;   
+    /* ---------- ALPHA VARIANTS (hex + alpha, same format) ---------- */
+    --color-primary-a12:    #A65A4A1F;    /* primary @ 12% opacity */
+    --color-primary-a22:    #A65A4A38;    /* primary @ 22% opacity */
+    --color-accent-a35:     #C9A66B59;    /* accent  @ 35% opacity */
+    --color-white-a18:      #FFFFFF2E;    /* white   @ 18% opacity */
+    --color-card-bg-a92:    #FFFFFFEB;    /* white   @ 92% opacity */
 
     /* ---------- LAYOUT ---------- */
     --image-height:         240px;

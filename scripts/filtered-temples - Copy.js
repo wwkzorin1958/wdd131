@@ -1,4 +1,14 @@
-/*   1. FOOTER   */
+/* ============================================================
+   filtered-temples.js
+   1. Populates footer (year + last modified).
+   2. Handles the responsive hamburger menu.
+   3. Dynamically builds temple cards from an array.
+   4. Filters temples via the nav menu (Home/Old/New/Large/Small).
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   1. FOOTER
+   ------------------------------------------------------------ */
 const yearSpan = document.querySelector('#currentyear');
 const lastModifiedPara = document.querySelector('#lastModified');
 
@@ -6,7 +16,9 @@ const today = new Date();
 yearSpan.textContent = today.getFullYear();
 lastModifiedPara.textContent = `Last Modified: ${document.lastModified}`;
 
-/*   2. HAMBURGER MENU   */
+/* ------------------------------------------------------------
+   2. HAMBURGER MENU
+   ------------------------------------------------------------ */
 const mainnav = document.querySelector('.navigation');
 const hambutton = document.querySelector('#menu');
 
@@ -15,7 +27,9 @@ hambutton.addEventListener('click', () => {
   hambutton.classList.toggle('show');
 });
 
-/*   3. TEMPLE DATA  (12 temples)   */
+/* ------------------------------------------------------------
+   3. TEMPLE DATA  (9 temples)
+   ------------------------------------------------------------ */
 const temples = [
   {
     templeName: "Aba Nigeria",
@@ -88,34 +102,12 @@ const temples = [
     area: 72000,
     imageUrl:
       "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/san-diego-california/400x250/san-diego-temple-765109-wallpaper.jpg"
-  },
-  {
-    templeName: "Draper Utah",
-    location: "Draper, Utah, United States",
-    dedicated: "2009, March, 20",
-    area: 58300,
-    imageUrl:
-      "https://assets.ldscdn.org/58/36/5836fd79f0f92e33bfe124e2f86ff43a382af1be/laie_hawaii_temple_lds.jpg" // Placeholder — see note
-  },
-  {
-    templeName: "Laie Hawaii",
-    location: "Laie, Hawaii, United States",
-    dedicated: "1919, November, 27",
-    area: 42100,
-    imageUrl:
-      "https://assets.ldscdn.org/58/36/5836fd79f0f92e33bfe124e2f86ff43a382af1be/laie_hawaii_temple_lds.jpg"
-  },
-  {
-    templeName: "Provo City Center",
-    location: "Provo, Utah, United States",
-    dedicated: "2016, March, 20",
-    area: 85084,
-    imageUrl:
-      "https://assets.ldscdn.org/57/18/5718c8b9c5a103646c0bd22554cb268b88986f05/provo_city_center_temple_exterior.jpg"
   }
 ];
 
-/*   4. RENDER FUNCTION   */
+/* ------------------------------------------------------------
+   4. RENDER FUNCTION
+   ------------------------------------------------------------ */
 const gallery = document.querySelector('main');
 
 function createTempleCard(temple) {
@@ -129,13 +121,11 @@ function createTempleCard(temple) {
   img.height = 250;
 
   const caption = document.createElement('figcaption');
-  const areaDisplay = temple.area > 0 ? `${temple.area.toLocaleString()} sq ft` : 'TBD';
-  
   caption.innerHTML = `
     <h2>${temple.templeName}</h2>
     <p><strong>Location:</strong> ${temple.location}</p>
     <p><strong>Dedicated:</strong> ${temple.dedicated}</p>
-    <p><strong>Area:</strong> ${areaDisplay}</p>
+    <p><strong>Area:</strong> ${temple.area.toLocaleString()} sq ft</p>
   `;
 
   card.appendChild(img);
@@ -150,7 +140,9 @@ function displayTemples(filteredTemples) {
   });
 }
 
-/*   5. FILTER LOGIC   */
+/* ------------------------------------------------------------
+   5. FILTER LOGIC
+   ------------------------------------------------------------ */
 function filterTemples(criteria) {
   let filtered = temples;
 
@@ -165,7 +157,7 @@ function filterTemples(criteria) {
       filtered = temples.filter(t => t.area > 90000);
       break;
     case 'small':
-      filtered = temples.filter(t => t.area < 10000 && t.area > 0);
+      filtered = temples.filter(t => t.area < 10000);
       break;
     case 'home':
     default:
@@ -175,7 +167,9 @@ function filterTemples(criteria) {
   displayTemples(filtered);
 }
 
-/*    6. EVENT LISTENERS   */
+/* ------------------------------------------------------------
+   6. EVENT LISTENERS
+   ------------------------------------------------------------ */
 document.querySelector('#home').addEventListener('click', (e) => {
   e.preventDefault();
   filterTemples('home');
@@ -201,5 +195,7 @@ document.querySelector('#small').addEventListener('click', (e) => {
   filterTemples('small');
 });
 
-/*   7. INITIAL LOAD   */
+/* ------------------------------------------------------------
+   7. INITIAL LOAD
+   ------------------------------------------------------------ */
 displayTemples(temples);
