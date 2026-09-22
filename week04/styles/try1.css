@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;  /* pushes nav to the right */
+    align-items: center;             /* vertically centers logo & nav */
+}
+
+.logo-box img {
+    width: 80px;   /* fixed size is more predictable than 20% */
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.navigation ul {
+    display: flex;          /* makes <li> items horizontal */
+    list-style: none;
+    gap: 1.5rem;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.product-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+}
+
+.social-media {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.social-media img {
+    width: 80px;
+}

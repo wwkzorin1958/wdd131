@@ -1,0 +1,164 @@
+:root {
+    --color-primary:    #A65A4A;
+    --color-primary-dark: #8C4A3C;
+    --color-accent:     #C9A66B;
+    --color-jade:       #6B9080;
+    --color-bg:         #F5EFE6;
+    --color-surface:    #FFFFFF;
+    --color-text:       #3A3A3A;
+    --color-text-light: #FFFFFF;
+
+    --image-height:     240px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+}
+
+/* -- Header -- */
+header {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    border-bottom: 3px solid var(--color-accent);
+}
+
+header h1 {
+    font-size: 1.25rem;
+    color: var(--color-text-light);
+    margin: 0;
+    text-align: left;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+}
+
+/* -- Hamburger -- */
+#menu {
+    display: block;
+    font-size: 1.75rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--color-text-light);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+}
+
+#menu::before { content: "☰"; }
+#menu.show::before { content: "X"; }
+
+/* -- Navigation (mobile) -- */
+header nav { width: 100%; }
+
+header nav ul {
+    list-style: none;
+    display: none;
+    flex-direction: column;
+    width: 100%;
+}
+
+header nav ul.show { display: flex; }
+
+header nav a {
+    display: block;
+    color: var(--color-text-light);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.75rem 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header nav a:hover,
+header nav a:focus {
+    background-color: var(--color-accent);
+    color: var(--color-primary-dark);
+}
+
+/* -- Gallery: 1 column on mobile -- */
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    max-width: 1100px;
+    margin: 1.5rem auto;
+    padding: 0 1rem;
+    align-items: start;
+}
+
+/* -- Temple Cards -- */
+figure {
+    background-color: var(--color-surface);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(166, 90, 74, 0.12);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid rgba(201, 166, 107, 0.35);
+    display: flex;
+    flex-direction: column;
+}
+
+figure:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 14px rgba(166, 90, 74, 0.22);
+}
+
+figure img {
+    width: 100%;
+    height: var(--image-height);
+    object-fit: cover;
+    background-color: var(--color-bg);
+    display: block;
+}
+
+figcaption {
+    padding: 0.75rem 1rem 1rem;
+    text-align: center;
+    color: var(--color-text);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+figcaption h2 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.3px;
+}
+
+figcaption p {
+    margin: 0.15rem 0;
+    color: var(--color-text);
+    font-size: 0.85rem;
+}
+
+figcaption p strong {
+    color: var(--color-jade);
+    font-weight: 500;
+}
+
+/* -- Footer -- */
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    border-top: 3px solid var(--color-accent);
+}
