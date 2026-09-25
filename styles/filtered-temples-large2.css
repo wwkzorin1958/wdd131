@@ -25,12 +25,13 @@
         border-bottom: 2px solid transparent;
         transition: color 0.3s, border-bottom 0.3s, background-color 0.3s;
     }
-header nav a:hover,
-header nav a:focus {
-    background-color: transparent;
-    color: var(--color-text-light);       /* white — passes on primary bg */
-    border-bottom: 2px solid var(--color-accent);
-}
+
+    header nav a:hover,
+    header nav a:focus {
+        background-color: transparent;
+        color: var(--color-accent);
+        border-bottom: 2px solid var(--color-accent);
+    }
 
     main {
         grid-template-columns: repeat(3, 1fr);
