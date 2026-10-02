@@ -89,56 +89,50 @@
   <!-- ==================== 4. COLOR SCHEMA ==================== -->
   <section>
     <h2>4. Color Schema</h2>
-   
+
     <div class="swatch-grid">
-      <!-- Primary -->
       <div class="swatch">
-        <div class="swatch-color" style="background:#1e4d3a;"></div>
+        <div class="swatch-color swatch-primary"></div>
         <div class="swatch-info">
           <div class="hex">#1e4d3a</div>
           <div class="usage">Primary — headings, logo, buttons, progress bar, card titles</div>
         </div>
       </div>
 
-      <!-- Accent -->
       <div class="swatch">
-        <div class="swatch-color" style="background:#c44536;"></div>
+        <div class="swatch-color swatch-accent"></div>
         <div class="swatch-info">
           <div class="hex">#c44536</div>
           <div class="usage">Accent — focus outlines, scenario highlights, domain, hover states</div>
         </div>
       </div>
 
-      <!-- Secondary green -->
       <div class="swatch">
-        <div class="swatch-color" style="background:#2d6a4f;"></div>
+        <div class="swatch-color swatch-secondary"></div>
         <div class="swatch-info">
           <div class="hex">#2d6a4f</div>
           <div class="usage">Secondary — hover states, progress gradient, section underlines</div>
         </div>
       </div>
 
-      <!-- Background -->
       <div class="swatch">
-        <div class="swatch-color" style="background:#f8fafc; border-bottom:1px solid #e2e8f0;"></div>
+        <div class="swatch-color swatch-bg"></div>
         <div class="swatch-info">
           <div class="hex">#f8fafc</div>
           <div class="usage">Page background — soft off-white for readability</div>
         </div>
       </div>
 
-      <!-- Text muted -->
       <div class="swatch">
-        <div class="swatch-color" style="background:#334155;"></div>
+        <div class="swatch-color swatch-text"></div>
         <div class="swatch-info">
           <div class="hex">#334155</div>
           <div class="usage">Body text — muted dark grey for paragraphs</div>
         </div>
       </div>
 
-      <!-- Border -->
       <div class="swatch">
-        <div class="swatch-color" style="background:#e2e8f0;"></div>
+        <div class="swatch-color swatch-border"></div>
         <div class="swatch-info">
           <div class="hex">#e2e8f0</div>
           <div class="usage">Borders — card outlines, dividers, subtle separators</div>
@@ -150,42 +144,42 @@
   <!-- ==================== 5. TYPOGRAPHY ==================== -->
   <section>
     <h2>5. Typography</h2>
-  
+
     <div class="type-demo">
       <div class="label">Headings — Inter 600 / 700</div>
-      <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:2rem; color:#1e4d3a; line-height:1.2;">
+      <div class="type-heading">
         MacLehose Trail<br>Hong Kong's Longest Hiking Trail
       </div>
     </div>
 
     <div class="type-demo">
       <div class="label">Subheadings — Inter 600</div>
-      <div style="font-family:'Inter',sans-serif; font-weight:600; font-size:1.3rem; color:#1e4d3a;">
+      <div class="type-subheading">
         All 10 sections at a glance
       </div>
     </div>
 
     <div class="type-demo">
       <div class="label">Body text — Inter 400</div>
-      <div style="font-family:'Inter',sans-serif; font-weight:400; font-size:1rem; color:#334155;">
+      <div class="type-body">
         100 km across 8 country parks, from Sai Kung to Tuen Mun. Ten sections, each with its own character — coastal beauty, mountain ridges, wartime relics, and serene reservoirs.
       </div>
     </div>
 
     <div class="type-demo">
       <div class="label">Meta / labels — Inter 500</div>
-      <div style="font-family:'Inter',sans-serif; font-weight:500; font-size:0.85rem; color:#334155;">
+      <div class="type-meta">
         📏 10.6 km · ⏱️ 3–4 h · ★★☆☆☆
       </div>
     </div>
+  </section>
 
   <!-- ==================== 6. WIREFRAMES ==================== -->
   <section>
     <h2>6. Wireframes</h2>
-   
+
     <div class="wireframe-container">
 
-      <!-- MOBILE WIREFRAME -->
       <div class="wireframe">
         <span class="wf-label">📱 Mobile (portrait, ~375px)</span>
         <pre>
@@ -237,7 +231,6 @@
         </pre>
       </div>
 
-      <!-- DESKTOP WIREFRAME -->
       <div class="wireframe">
         <span class="wf-label">🖥️ Desktop (wide, ~1280px)</span>
         <pre>
@@ -288,8 +281,7 @@
       </div>
 
     </div>
-
-    </section>
+  </section>
 
   <!-- ==================== 7. SITE STRUCTURE ==================== -->
   <section>
@@ -307,7 +299,7 @@
   <!-- ==================== 8. DYNAMIC ELEMENTS ==================== -->
   <section>
     <h2>8. JavaScript Dynamic Elements</h2>
-    <p>JavaScript  for dynamic behavior:</p>
+    <p>JavaScript for dynamic behavior:</p>
     <ul>
       <li><strong>Multiple functions:</strong> <code>renderTrailCards()</code>, <code>updateProgressUI()</code>, <code>toggleSectionCompletion()</code>, <code>updateCardCompletionIndicators()</code>, <code>injectNavigation()</code>, <code>setupCardCompletionToggle()</code>.</li>
       <li><strong>DOM interaction:</strong> Selecting <code>#trail-card-grid</code>, modifying <code>innerHTML</code>, listening for <code>click</code> events on cards and the reset button.</li>
