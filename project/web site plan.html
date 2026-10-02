@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Site Plan · MacLehose Trail</title>
+  <meta name="description" content="Site plan document for the MacLehose Trail website project, covering site name, purpose, scenarios, color schema, typography, and wireframes.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <style>
+    /* ---------- SITE PLAN STYLES ---------- */
+   
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary: #1e4d3a;        
+      --primary-light: #2d6a4f;  
+      --accent: #c44536;         
+      --bg: #f8fafc;             
+      --surface: #ffffff;        
+      --text: #0f172a;           
+      --text-muted: #334155;     
+      --border: #e2e8f0;         
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      padding: 2rem 1.25rem 4rem;
+    }
+
+    .plan-wrapper {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* ---------- HEADER ---------- */
+    .plan-header {
+      background: linear-gradient(135deg, #eaf4ef 0%, #d9e8e0 100%);
+      border-radius: 16px;
+      padding: 2.5rem 2rem;
+      margin-bottom: 2.5rem;
+      border: 1px solid var(--border);
+    }
+
+    .plan-header h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .plan-header p {
+      font-size: 1.1rem;
+      color: #1e3a2f;
+      max-width: 680px;
+    }
+
+    /* ---------- SECTIONS ---------- */
+    section {
+      background: var(--surface);
+      border-radius: 16px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    }
+
+    section h2 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 3px solid var(--primary-light);
+      display: inline-block;
+    }
+
+    section h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin: 1.5rem 0 0.75rem;
+    }
+
+    section p {
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    section ul,
+    section ol {
+      margin: 0.75rem 0 1rem 1.5rem;
+      color: var(--text-muted);
+    }
+
+    section li {
+      margin-bottom: 0.5rem;
+    }
+
+    strong {
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    /* ---------- COLOR SWATCHES ---------- */
+    .swatch-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin: 1.25rem 0;
+    }
+
+    .swatch {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    .swatch-color {
+      height: 70px;
+    }
+
+    .swatch-info {
+      padding: 0.75rem 1rem;
+      background: var(--surface);
+    }
+
+    .swatch-info .hex {
+      font-family: monospace;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .swatch-info .usage {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 0.15rem;
+    }
+
+    /* ---------- TYPOGRAPHY DEMO ---------- */
+    .type-demo {
+      border-left: 4px solid var(--primary-light);
+      padding: 1rem 1.5rem;
+      margin: 1rem 0;
+      background: #f1f5f9;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .type-demo .label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+    }
+
+    /* ---------- WIREFRAME ---------- */
+    .wireframe-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin-top: 1.5rem;
+    }
+
+    @media (min-width: 900px) {
+      .wireframe-container {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .wireframe {
+      border: 2px dashed #94a3b8;
+      border-radius: 12px;
+      padding: 1rem;
+      background: #f8fafc;
+      font-family: monospace;
+      font-size: 0.8rem;
+      color: #334155;
+      line-height: 1.4;
+      overflow-x: auto;
+    }
+
+    .wireframe .wf-label {
+      font-weight: 700;
+      color: var(--primary);
+      font-size: 0.9rem;
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+
+    .wireframe pre {
+      margin: 0;
+      white-space: pre;
+      font-family: monospace;
+    }
+
+    /* ---------- SCENARIO CARDS ---------- */
+    .scenario {
+      background: #f1f5f9;
+      border-left: 4px solid var(--accent);
+      border-radius: 0 12px 12px 0;
+      padding: 1.25rem 1.5rem;
+      margin: 1rem 0;
+    }
+
+    .scenario .question {
+      font-weight: 600;
+      color: var(--primary);
+      font-size: 1.05rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .scenario .answer {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* ---------- PURPOSE BOX ---------- */
+    .purpose-box {
+      background: #eaf4ef;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 1rem 0;
+      border-left: 5px solid var(--primary);
+    }
+
+    .purpose-box p {
+      color: #1e3a2f;
+      margin: 0;
+      font-weight: 500;
+    }
+
+    /* ---------- DOMAIN ---------- */
+    .domain {
+      font-family: monospace;
+      background: #f1f5f9;
+      padding: 0.2rem 0.6rem;
+      border-radius: 6px;
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    /* ---------- FOOTER ---------- */
+    .plan-footer {
+      text-align: center;
+      padding: 2rem 0 0;
+      font-size: 0.9rem;
+      color: #64748b;
+      border-top: 1px solid var(--border);
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+<div class="plan-wrapper">
+
+  <!-- ==================== HEADER ==================== -->
+  <header class="plan-header">
+    <h1>Site Plan · MacLehose Trail</h1>
+    <p>A planning document for the MacLehose Trail guide website — a resource for hikers exploring Hong Kong's longest and most iconic long-distance trail.</p>
+  </header>
+
+  <!-- ==================== 1. SITE NAME ==================== -->
+  <section>
+    <h2>1. Site Name</h2>
+    <p><strong>MacLehose Trail</strong></p>
+    <p class="domain">maclehosetrail.org</p>
+    <p>
+      The name directly references the trail itself — the <em>MacLehose Trail</em> — which is the central subject and purpose of the site. It is instantly recognizable to hikers and searchable for anyone planning a visit to Hong Kong.
+    </p>
+    <h3>Logo</h3>
+    <p>
+      The logo will be a simple wordmark using the site's primary font in <strong>deep forest green (#1e4d3a)</strong>, optionally paired with a small mountain or trail marker icon (🏔️). The text "MacLehose Trail" is rendered in a clean, modern sans-serif that conveys clarity and outdoor reliability.
+    </p>
+  </section>
+
+  <!-- ==================== 2. SITE PURPOSE ==================== -->
+  <section>
+    <h2>2. Site Purpose</h2>
+    <div class="purpose-box">
+      <p>
+        The site provides a comprehensive, section-by-section guide to the MacLehose Trail — Hong Kong's 100 km long-distance hiking route. It offers distance, time, difficulty ratings, scenic highlights, and practical planning information (transport, water, sun protection). Visitors can track which sections they have completed, browse all ten sections at a glance, and find the essential details needed to plan a day hike or a full thru-hike.
+      </p>
+    </div>
+    <p>The site's scope includes:</p>
+    <ul>
+      <li>An overview of the entire trail with key statistics (100 km, 10 sections, 957 m highest point, established 1979).</li>
+      <li>Individual cards for each of the 10 sections with images, difficulty stars, distance, and time estimates.</li>
+      <li>An interactive progress tracker that saves completed sections in the browser.</li>
+      <li>A dedicated planning panel with practical advice (transport, water, sun protection, mobile coverage).</li>
+      <li>A references page citing all external images and information sources.</li>
+    </ul>
+  </section>
+
+  <!-- ==================== 3. SCENARIOS ==================== -->
+  <section>
+    <h2>3. Scenarios</h2>
+    <p>These are questions asked by the site's target audience — hikers, travelers, and outdoor enthusiasts planning to walk the MacLehose Trail.</p>
+
+    <div class="scenario">
+      <div class="question">“Which section of the MacLehose Trail is the most scenic, and how long does it take?”</div>
+      <div class="answer">
+        The site answers this on the homepage: Section 2 (Long Ke → Pak Tam Au) is described as “Most scenic: Tai Long Wan, Sai Wan, Ham Tin beaches. ‘Hong Kong’s Maldives’,” with a distance of 13.5 km and an estimated time of 5–6 hours. The difficulty rating (★★★☆☆) helps the user gauge effort.
+      </div>
+    </div>
+
+    <div class="scenario">
+      <div class="question">“What is the highest point on the trail, and which section reaches it?”</div>
+      <div class="answer">
+        The hero stats grid shows “Highest point: 957 m,” and the Section 8 card explains: “Tai Mo Shan, highest peak in Hong Kong (957 m). Weather station, sea of clouds.” This directly connects the stat to the relevant section.
+      </div>
+    </div>
+
+    <div class="scenario">
+      <div class="question">“How do I get to the trailheads, and what should I bring?”</div>
+      <div class="answer">
+        The “Planning your hike” panel answers this with bullet points: “Buses &amp; minibuses to trailheads,” “Carry 2–3 L water per person,” “Sun protection essential,” and “Mobile coverage varies.”
+      </div>
+    </div>
+
+    <div class="scenario">
+      <div class="question">“Can I track which sections I have already completed?”</div>
+      <div class="answer">
+        Yes — the interactive progress tracker on the homepage lets users mark sections as complete by clicking a card. The state is saved in <code>localStorage</code> and displayed as a progress bar (“Completed: X / 10 sections”).
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 4. COLOR SCHEMA ==================== -->
+  <section>
+    <h2>4. Color Schema</h2>
+   
+    <div class="swatch-grid">
+      <!-- Primary -->
+      <div class="swatch">
+        <div class="swatch-color" style="background:#1e4d3a;"></div>
+        <div class="swatch-info">
+          <div class="hex">#1e4d3a</div>
+          <div class="usage">Primary — headings, logo, buttons, progress bar, card titles</div>
+        </div>
+      </div>
+
+      <!-- Accent -->
+      <div class="swatch">
+        <div class="swatch-color" style="background:#c44536;"></div>
+        <div class="swatch-info">
+          <div class="hex">#c44536</div>
+          <div class="usage">Accent — focus outlines, scenario highlights, domain, hover states</div>
+        </div>
+      </div>
+
+      <!-- Secondary green -->
+      <div class="swatch">
+        <div class="swatch-color" style="background:#2d6a4f;"></div>
+        <div class="swatch-info">
+          <div class="hex">#2d6a4f</div>
+          <div class="usage">Secondary — hover states, progress gradient, section underlines</div>
+        </div>
+      </div>
+
+      <!-- Background -->
+      <div class="swatch">
+        <div class="swatch-color" style="background:#f8fafc; border-bottom:1px solid #e2e8f0;"></div>
+        <div class="swatch-info">
+          <div class="hex">#f8fafc</div>
+          <div class="usage">Page background — soft off-white for readability</div>
+        </div>
+      </div>
+
+      <!-- Text muted -->
+      <div class="swatch">
+        <div class="swatch-color" style="background:#334155;"></div>
+        <div class="swatch-info">
+          <div class="hex">#334155</div>
+          <div class="usage">Body text — muted dark grey for paragraphs</div>
+        </div>
+      </div>
+
+      <!-- Border -->
+      <div class="swatch">
+        <div class="swatch-color" style="background:#e2e8f0;"></div>
+        <div class="swatch-info">
+          <div class="hex">#e2e8f0</div>
+          <div class="usage">Borders — card outlines, dividers, subtle separators</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 5. TYPOGRAPHY ==================== -->
+  <section>
+    <h2>5. Typography</h2>
+  
+    <div class="type-demo">
+      <div class="label">Headings — Inter 600 / 700</div>
+      <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:2rem; color:#1e4d3a; line-height:1.2;">
+        MacLehose Trail<br>Hong Kong's Longest Hiking Trail
+      </div>
+    </div>
+
+    <div class="type-demo">
+      <div class="label">Subheadings — Inter 600</div>
+      <div style="font-family:'Inter',sans-serif; font-weight:600; font-size:1.3rem; color:#1e4d3a;">
+        All 10 sections at a glance
+      </div>
+    </div>
+
+    <div class="type-demo">
+      <div class="label">Body text — Inter 400</div>
+      <div style="font-family:'Inter',sans-serif; font-weight:400; font-size:1rem; color:#334155;">
+        100 km across 8 country parks, from Sai Kung to Tuen Mun. Ten sections, each with its own character — coastal beauty, mountain ridges, wartime relics, and serene reservoirs.
+      </div>
+    </div>
+
+    <div class="type-demo">
+      <div class="label">Meta / labels — Inter 500</div>
+      <div style="font-family:'Inter',sans-serif; font-weight:500; font-size:0.85rem; color:#334155;">
+        📏 10.6 km · ⏱️ 3–4 h · ★★☆☆☆
+      </div>
+    </div>
+
+  <!-- ==================== 6. WIREFRAMES ==================== -->
+  <section>
+    <h2>6. Wireframes</h2>
+   
+    <div class="wireframe-container">
+
+      <!-- MOBILE WIREFRAME -->
+      <div class="wireframe">
+        <span class="wf-label">📱 Mobile (portrait, ~375px)</span>
+        <pre>
+┌─────────────────────┐
+│ 🏔️ MacLehose  ☰    │
+├─────────────────────┤
+│ ┌─────────────────┐ │
+│ │     HERO        │ │
+│ │  H1 title       │ │
+│ │  paragraph      │ │
+│ │ ┌────┐ ┌────┐   │ │
+│ │ │stat│ │stat│   │ │
+│ │ └────┘ └────┘   │ │
+│ │ ┌────┐ ┌────┐   │ │
+│ │ │stat│ │stat│   │ │
+│ │ └────┘ └────┘   │ │
+│ └─────────────────┘ │
+│ ┌─────────────────┐ │
+│ │ PROGRESS PANEL  │ │
+│ │ ✅ 0/10         │ │
+│ │ ▓░░░░░░░░       │ │
+│ │ [Reset]         │ │
+│ └─────────────────┘ │
+│ ┌─────────────────┐ │
+│ │ H2 sections     │ │
+│ └─────────────────┘ │
+│ ┌─────────────────┐ │
+│ │ TRAIL CARD 1    │ │
+│ │ [ image ]       │ │
+│ │ [badge]         │ │
+│ │ Title           │ │
+│ │ meta · stars    │ │
+│ │ description     │ │
+│ │ [View →]        │ │
+│ └─────────────────┘ │
+│ ┌─────────────────┐ │
+│ │ TRAIL CARD 2    │ │
+│ │ (same layout)   │ │
+│ └─────────────────┘ │
+│   ... cards 3–10    │
+│ ┌─────────────────┐ │
+│ │ PLANNING PANEL  │ │
+│ │ text + bullets  │ │
+│ └─────────────────┘ │
+│ ┌─────────────────┐ │
+│ │ FOOTER          │ │
+│ └─────────────────┘ │
+└─────────────────────┘
+        </pre>
+      </div>
+
+      <!-- DESKTOP WIREFRAME -->
+      <div class="wireframe">
+        <span class="wf-label">🖥️ Desktop (wide, ~1280px)</span>
+        <pre>
+┌──────────────────────────────────────────────┐
+│ 🏔️ MacLehose    Home Sections Plan Refs      │
+├──────────────────────────────────────────────┤
+│ ┌──────────────────────────────────────────┐ │
+│ │              HERO                        │ │
+│ │  H1 title                                │ │
+│ │  paragraph                               │ │
+│ │ ┌────┐ ┌────┐ ┌────┐ ┌────┐             │ │
+│ │ │stat│ │stat│ │stat│ │stat│             │ │
+│ │ └────┘ └────┘ └────┘ └────┘             │ │
+│ └──────────────────────────────────────────┘ │
+│ ┌──────────────────────────────────────────┐ │
+│ │ PROGRESS  ✅ 3/10 ▓▓▓░░░░░  [Reset]     │ │
+│ └──────────────────────────────────────────┘ │
+│ ┌──────────────────────────────────────────┐ │
+│ │ H2: All 10 sections at a glance          │ │
+│ └──────────────────────────────────────────┘ │
+│ ┌──────────┐ ┌──────────┐ ┌──────────┐      │
+│ │ CARD 1   │ │ CARD 2   │ │ CARD 3   │      │
+│ │ [image]  │ │ [image]  │ │ [image]  │      │
+│ │ badge    │ │ badge    │ │ badge    │      │
+│ │ title    │ │ title    │ │ title    │      │
+│ │ meta     │ │ meta     │ │ meta     │      │
+│ │ desc     │ │ desc     │ │ desc     │      │
+│ │ [View]   │ │ [View]   │ │ [View]   │      │
+│ └──────────┘ └──────────┘ └──────────┘      │
+│ ┌──────────┐ ┌──────────┐ ┌──────────┐      │
+│ │ CARD 4   │ │ CARD 5   │ │ CARD 6   │      │
+│ └──────────┘ └──────────┘ └──────────┘      │
+│ ┌──────────┐ ┌──────────┐ ┌──────────┐      │
+│ │ CARD 7   │ │ CARD 8   │ │ CARD 9   │      │
+│ └──────────┘ └──────────┘ └──────────┘      │
+│ ┌──────────┐ ┌──────────┐                   │
+│ │ CARD 10  │ │ (empty)  │                   │
+│ └──────────┘ └──────────┘                   │
+│ ┌──────────────────────────────────────────┐ │
+│ │ PLANNING PANEL                           │ │
+│ │ text + 4-column bullets                  │ │
+│ └──────────────────────────────────────────┘ │
+│ ┌──────────────────────────────────────────┐ │
+│ │ FOOTER                                   │ │
+│ └──────────────────────────────────────────┘ │
+└──────────────────────────────────────────────┘
+        </pre>
+      </div>
+
+    </div>
+
+    </section>
+
+  <!-- ==================== 7. SITE STRUCTURE ==================== -->
+  <section>
+    <h2>7. Site Structure (Pages)</h2>
+    <p>The site consists of at least three pages, all sharing consistent navigation and visual theme:</p>
+    <ol>
+      <li><strong>index.html</strong> — Home page: hero, stats, progress tracker, all 10 section cards, planning panel.</li>
+      <li><strong>sections.html</strong> — Detailed list / filterable view of all sections (extends homepage content).</li>
+      <li><strong>plan.html</strong> — Planning guide: transport, water, sun, mobile coverage, best months, FAQ.</li>
+      <li><strong>references.html</strong> — Citations for all images, text, and external sources (linked in footer, unstyled as permitted).</li>
+    </ol>
+    <p>Navigation links (Home · All sections · Plan · References) appear in the top bar of every page, and the references page is linked in the footer.</p>
+  </section>
+
+  <!-- ==================== 8. DYNAMIC ELEMENTS ==================== -->
+  <section>
+    <h2>8. JavaScript Dynamic Elements</h2>
+    <p>JavaScript  for dynamic behavior:</p>
+    <ul>
+      <li><strong>Multiple functions:</strong> <code>renderTrailCards()</code>, <code>updateProgressUI()</code>, <code>toggleSectionCompletion()</code>, <code>updateCardCompletionIndicators()</code>, <code>injectNavigation()</code>, <code>setupCardCompletionToggle()</code>.</li>
+      <li><strong>DOM interaction:</strong> Selecting <code>#trail-card-grid</code>, modifying <code>innerHTML</code>, listening for <code>click</code> events on cards and the reset button.</li>
+      <li><strong>Conditional branching:</strong> <code>if (completed.includes(id))</code> … <code>else</code> … in the toggle function; <code>if (completed) { … } else { … }</code> in the card indicator function.</li>
+      <li><strong>Objects &amp; arrays:</strong> The <code>trailSections</code> array of objects; <code>getCompletedSections()</code> returns an array; <code>Array.map()</code>, <code>Array.filter()</code>, <code>Array.includes()</code>.</li>
+      <li><strong>Template literals:</strong> All dynamic HTML is built with backtick strings — e.g., the card markup, progress panel markup.</li>
+      <li><strong>localStorage:</strong> Completed sections are saved under the key <code>maclehose_completed_sections</code> and persist across page reloads.</li>
+      <li><strong>HTML form:</strong> A form is included on <code>plan.html</code> (e.g., “Ask a trail question” or “Newsletter sign-up”) meeting course standards.</li>
+    </ul>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="plan-footer">
+    <p>MacLehose Trail — Site Plan Document · Created for WDD 131</p>
+  </footer>
+
+</div>
+</body>
+</html>

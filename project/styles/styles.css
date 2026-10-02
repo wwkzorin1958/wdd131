@@ -1,0 +1,446 @@
+/* ============================================================
+   styles/styles.css – MacLehose Trail website
+   ============================================================ */
+
+/* ---------- RESET & VARIABLES ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #1e4d3a;       /* deep forest green */
+  --primary-light: #2d6a4f;
+  --accent: #c44536;        /* warm terracotta for energy */
+  --bg: #f8fafc;
+  --surface: #ffffff;
+  --text: #0f172a;
+  --text-muted: #334155;
+  --border: #e2e8f0;
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.06);
+  --radius: 16px;
+  --font: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+body {
+  font-family: var(--font);
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.25rem 2rem;
+}
+
+/* ---------- TYPOGRAPHY ---------- */
+h1, h2, h3 {
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--primary);
+}
+
+h1 {
+  font-size: 2.8rem;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  color: var(--text-muted);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ---------- TOP BAR / NAV ---------- */
+.top-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0 0.5rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 1.5rem;
+}
+
+.logo a {
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: var(--primary);
+  letter-spacing: -0.01em;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.nav-links a {
+  color: var(--text-muted);
+  transition: color 0.15s;
+}
+
+.nav-links a:hover,
+.nav-links a[aria-current="page"] {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* ---------- HERO ---------- */
+.hero {
+  background: linear-gradient(135deg, #eaf4ef 0%, #d9e8e0 100%);
+  border-radius: var(--radius);
+  padding: 2.5rem 2rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.hero h1 {
+  font-size: 2.6rem;
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+.hero p {
+  max-width: 700px;
+  font-size: 1.15rem;
+  color: #1e3a2f;
+  margin-bottom: 2rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+}
+
+.stat-item {
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.stat-item .label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.stat-item .value {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary);
+  line-height: 1.2;
+}
+
+/* ---------- INFO PANELS ---------- */
+.info-panel {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 2rem 2rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+  margin: 1.5rem 0;
+}
+
+.info-panel h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.info-panel p {
+  max-width: 800px;
+  margin-bottom: 1rem;
+}
+
+/* ---------- PROGRESS / DYNAMIC ELEMENT ---------- */
+.progress-panel {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem;
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 1.5rem 2rem;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+
+.progress-text {
+  font-weight: 600;
+  color: var(--primary);
+  font-size: 1.1rem;
+}
+
+.progress-bar-bg {
+  flex: 1;
+  min-width: 200px;
+  height: 12px;
+  background: #e2e8f0;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--primary), #40916c);
+  border-radius: 20px;
+  transition: width 0.4s ease;
+}
+
+.progress-reset {
+  background: none;
+  border: 1px solid var(--border);
+  padding: 0.4rem 1rem;
+  border-radius: 40px;
+  font-family: var(--font);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.progress-reset:hover {
+  background: #fee2e2;
+  border-color: #fca5a5;
+  color: #b91c1c;
+}
+
+/* ---------- SECTION TITLE ---------- */
+.section-title {
+  margin: 2.5rem 0 1.5rem;
+  font-size: 2rem;
+}
+
+/* ---------- CARD GRID ---------- */
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.75rem;
+}
+
+@media (min-width: 640px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ---------- TRAIL CARD ---------- */
+.trail-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.trail-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.card-img {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #d9e2ec;
+}
+
+.card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s;
+}
+
+.trail-card:hover .card-img img {
+  transform: scale(1.02);
+}
+
+.card-content {
+  padding: 1.25rem 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.badge {
+  display: inline-block;
+  background: #e6f0eb;
+  color: var(--primary);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.25rem 0.75rem;
+  border-radius: 40px;
+  margin-bottom: 0.75rem;
+  align-self: flex-start;
+}
+
+.card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin: 0.5rem 0 0.75rem;
+}
+
+.difficulty-stars {
+  color: #e6a700;
+  letter-spacing: 2px;
+}
+
+.card-content p {
+  font-size: 0.95rem;
+  margin-bottom: 1.25rem;
+  flex: 1;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--primary);
+  color: white;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 40px;
+  text-align: center;
+  transition: background 0.15s;
+  align-self: flex-start;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: var(--primary-light);
+}
+
+/* ---------- HIGHLIGHT LIST ---------- */
+.highlight-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.75rem 2rem;
+  margin-top: 1.25rem;
+}
+
+.highlight-list li {
+  font-weight: 500;
+  color: var(--text-muted);
+  padding-left: 0.25rem;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 3rem;
+  padding: 1.5rem 0 1rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+footer a {
+  color: var(--primary);
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 640px) {
+  .wrapper {
+    padding: 0 1rem 1.5rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .top-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .nav-links {
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .stat-item .value {
+    font-size: 1.4rem;
+  }
+
+  .info-panel {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .progress-panel {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .hero {
+    padding: 1.75rem 1.25rem;
+  }
+}
+
+/* ---------- ACCESSIBILITY / FOCUS ---------- */
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}

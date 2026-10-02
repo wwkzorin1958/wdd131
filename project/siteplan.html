@@ -1,15 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Discover the best Hong Kong hiking trails — from easy country park walks to dramatic ridge-line hikes with harbour views.">
-    <meta name="author" content="Ricky Wong">
-    <title>Hong Kong hiking trails</title>
-    <link rel="stylesheet" href="styles/siteplan.css">
-    <script src="scripts/siteplan.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MacLehose Trail · Hong Kong's Longest Hiking Trail</title>
+  <meta name="description" content="Explore the MacLehose Trail: 100 km across 8 country parks, 10 sections, from Sai Kung to Tuen Mun. Section guides, stats, and planning.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/styles.css">
 </head>
-<body>
-    
+<body data-section="home">
+<div class="wrapper">
+
+  <header class="top-bar">
+    <div class="logo"><a href="index.html">MacLehose Trail</a></div>
+    <nav class="nav-links" data-nav aria-label="Main navigation">
+      <!-- dynamic navigation injected by nav.js -->
+    </nav>
+  </header>
+
+  <main id="home">
+    <div class="hero">
+      <h1>MacLehose Trail<br>Hong Kong's Longest Hiking Trail</h1>
+      <p>100 km across 8 country parks, from Sai Kung to Tuen Mun. Ten sections, each with its own character — coastal beauty, mountain ridges, wartime relics, and serene reservoirs.</p>
+      <div class="stats-grid">
+        <div class="stat-item"><div class="label">Total distance</div><div class="value">100 km</div></div>
+        <div class="stat-item"><div class="label">Sections</div><div class="value">10</div></div>
+        <div class="stat-item"><div class="label">Highest point</div><div class="value">957 m</div></div>
+        <div class="stat-item"><div class="label">Established</div><div class="value">1979</div></div>
+      </div>
+    </div>
+
+    <!-- progress panel: dynamic via progress.js -->
+    <div class="info-panel progress-panel" id="trail-progress">
+      <!-- injected by JS -->
+    </div>
+
+    <h2 class="section-title">All 10 sections at a glance</h2>
+
+    <div class="card-grid" id="trail-card-grid">
+      <!-- cards are injected via JS filter/loader for dynamic content & template literals -->
+    </div>
+
+    <div class="info-panel" style="margin-top:3rem;">
+      <h3>Planning your hike</h3>
+      <p>The MacLehose Trail is well-marked and can be done in sections or as a thru-hike. Best months are October to April. Always carry enough water — some sections have no reliable supplies. Public transport connects most section start/end points.</p>
+      <ul class="highlight-list">
+        <li>🚌 Buses &amp; minibuses to trailheads</li>
+        <li>💧 Carry 2–3 L water per person</li>
+        <li>☀️ Sun protection essential</li>
+        <li>📱 Mobile coverage varies</li>
+      </ul>
+    </div>
+  </main>
+
+  <footer>
+    <span>MacLehose Trail Guide · Hong Kong</span>
+    <span><a href="references.html">References</a> · Images are illustrative</span>
+  </footer>
+</div>
+
+<script src="scripts/nav.js"></script>
+<script src="scripts/filter.js"></script>
+<script src="scripts/progress.js"></script>
+<script src="scripts/backtotop.js"></script>
 </body>
 </html>
