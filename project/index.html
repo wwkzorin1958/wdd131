@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Ricky Wong">
+  <meta name="description" content="Browse all 10 sections of Hong Kong's MacLehose Trail — 100 km across 8 country parks. Filter by difficulty, track your progress, and view photos for each section.">
+  <title>All Sections · MacLehose Trail</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body data-section="sections">
+<div class="wrapper">
+
+  <header class="top-bar">
+    <div class="logo"><a href="index.html">🏔️ MacLehose Trail</a></div>
+    <nav class="nav-links" data-nav aria-label="Main navigation"></nav>
+  </header>
+
+  <main id="sections">
+    <div class="hero">
+      <h1>All 10 Sections<br>MacLehose Trail</h1>
+      <p>100 km across 8 country parks, from Sai Kung to Tuen Mun. Ten sections, each with its own character — coastal beauty, mountain ridges, wartime relics, and serene reservoirs. Filter by difficulty and track your progress below.</p>
+      <div class="stats-grid">
+        <div class="stat-item"><div class="label">Total distance</div><div class="value">100 km</div></div>
+        <div class="stat-item"><div class="label">Sections</div><div class="value">10</div></div>
+        <div class="stat-item"><div class="label">Highest point</div><div class="value">957 m</div></div>
+        <div class="stat-item"><div class="label">Established</div><div class="value">1979</div></div>
+      </div>
+    </div>
+
+    <div class="info-panel progress-panel" id="trail-progress"></div>
+
+    <h2 class="section-title">All sections at a glance</h2>
+
+    <div class="filter-bar" id="filter-bar"></div>
+
+    <div class="card-grid" id="trail-card-grid"></div>
+
+    <div class="info-panel planning-panel">
+      <h3>Planning your hike</h3>
+      <p>The MacLehose Trail is well-marked and can be done in sections or as a thru-hike. Best months are October to April. Always carry enough water — some sections have no reliable supplies. Public transport connects most section start/end points.</p>
+      <ul class="highlight-list">
+        <li>🚌 Buses &amp; minibuses to trailheads</li>
+        <li>💧 Carry 2–3 L water per person</li>
+        <li>☀️ Sun protection essential</li>
+        <li>📱 Mobile coverage varies</li>
+      </ul>
+    </div>
+  </main>
+
+  <footer>
+    <span>MacLehose Trail Guide · Hong Kong</span>
+    <span><a href="references.html">References</a> · Images are illustrative</span>
+  </footer>
+</div>
+
+<script src="scripts/data.js"></script>
+<script src="scripts/nav.js"></script>
+<script src="scripts/progress.js"></script>
+<script src="scripts/cards.js"></script>
+<script src="scripts/backtotop.js"></script>
+</body>
+</html>

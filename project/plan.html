@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Ricky Wong">
+  <meta name="description" content="Practical planning guide for the MacLehose Trail: transport, water, sun protection, safety, and a contact form.">
+  <title>Plan Your Hike · MacLehose Trail</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body data-section="plan">
+<div class="wrapper">
+
+  <header class="top-bar">
+    <div class="logo"><a href="index.html">🏔️ MacLehose Trail</a></div>
+    <nav class="nav-links" data-nav aria-label="Main navigation"></nav>
+  </header>
+
+  <main id="plan">
+    <div class="hero">
+      <h1>Plan Your Hike</h1>
+      <p>Everything you need to know before setting out on the MacLehose Trail — transport, supplies, weather, and safety.</p>
+    </div>
+
+    <div class="info-panel">
+      <h3>Best time to hike</h3>
+      <p>October to April offers the most comfortable conditions — cooler temperatures, lower humidity, and clearer skies. Avoid July–September (typhoon season and extreme heat).</p>
+    </div>
+
+    <div class="info-panel">
+      <h3>Getting to the trail</h3>
+      <p>Public transport connects most section start and end points. Buses and minibuses run regularly to trailheads. Taxis are available but can be expensive for remote sections.</p>
+    </div>
+
+    <div class="info-panel">
+      <h3>What to bring</h3>
+      <ul class="highlight-list">
+        <li>💧 2–3 L water per person</li>
+        <li>☀️ Sun protection (hat, sunscreen)</li>
+        <li>🥾 Sturdy hiking shoes</li>
+        <li>🍫 High-energy snacks</li>
+        <li>📱 Fully charged phone + power bank</li>
+        <li>🧴 Insect repellent</li>
+      </ul>
+    </div>
+
+    <div class="info-panel">
+      <h3>Safety notes</h3>
+      <p>Mobile coverage varies — some sections have no signal. Always tell someone your plans. Start early to avoid hiking in darkness. Check weather forecasts before setting out.</p>
+    </div>
+
+    <div class="info-panel">
+      <h3>Ask a question</h3>
+      <p>Have a question about the trail? Send us a message and we'll get back to you.</p>
+      <form id="contact-form" class="contact-form" action="#" method="post">
+        <div class="form-row">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required placeholder="Your name">
+        </div>
+        <div class="form-row">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required placeholder="you@example.com">
+        </div>
+        <div class="form-row">
+          <label for="section">Section of interest</label>
+          <select id="section" name="section">
+            <option value="">— Select a section —</option>
+            <option value="1">Section 1 · Pak Tam Chung → Long Ke</option>
+            <option value="2">Section 2 · Long Ke → Pak Tam Au</option>
+            <option value="3">Section 3 · Pak Tam Au → Kei Ling Ha</option>
+            <option value="4">Section 4 · Kei Ling Ha → Tate's Cairn</option>
+            <option value="5">Section 5 · Tate's Cairn → Tai Po Road</option>
+            <option value="6">Section 6 · Tai Po Road → Shing Mun</option>
+            <option value="7">Section 7 · Shing Mun → Lead Mine Pass</option>
+            <option value="8">Section 8 · Lead Mine Pass → Route Twisk</option>
+            <option value="9">Section 9 · Route Twisk → Tin Fu Tsai</option>
+            <option value="10">Section 10 · Tin Fu Tsai → Tuen Mun</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" required placeholder="Your question..."></textarea>
+        </div>
+        <button type="submit" class="btn">Send message</button>
+        <p class="form-note" id="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <span>MacLehose Trail Guide · Hong Kong</span>
+    <span><a href="references.html">References</a> · Images are illustrative</span>
+  </footer>
+</div>
+
+<script src="scripts/data.js"></script>
+<script src="scripts/nav.js"></script>
+<script src="scripts/form.js"></script>
+<script src="scripts/backtotop.js"></script>
+</body>
+</html>
